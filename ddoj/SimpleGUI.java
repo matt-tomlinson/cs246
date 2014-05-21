@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.scene.layout.GridPane;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.*;
@@ -21,7 +22,7 @@ public class SimpleGUI extends Application {
         grid.setPadding(new Insets(25, 25, 25, 25));
 
         Text scenetitle = new Text("Welcome");
-        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        scenetitle.setId("welcome-text");
         grid.add(scenetitle, 0, 0, 2, 1);
 
         Label userName = new Label("User Name:");
@@ -44,20 +45,22 @@ public class SimpleGUI extends Application {
 
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
+        actiontarget.setId("actiontarget");
 
         btn.setOnAction(new EventHandler<ActionEvent>() {
  
         @Override
         public void handle(ActionEvent e) {
-            actiontarget.setFill(Color.FIREBRICK);
             actiontarget.setText("Sign in button pressed");
             }
         });
 
-        Scene scene = new Scene(grid, 350, 200);
+        Scene scene = new Scene(grid, 350, 250);
 
         primaryStage.setTitle("Favorite Scriptures Application");
         primaryStage.setScene(scene);
+        scene.getStylesheets().add
+            (SimpleGUI.class.getResource("SimpleGUI.css").toExternalForm());
         primaryStage.show();
     }
     
