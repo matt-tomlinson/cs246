@@ -1,0 +1,19 @@
+.root {
+     -fx-background-image: url("bg.png");
+}
+
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #FAFAFA;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-background-color: #2A5058;
+}
+
+.button:hover {
+    -fx-background-color: #61a2b1;
+}
